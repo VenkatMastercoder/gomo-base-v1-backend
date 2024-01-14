@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "socialaccounts",
+  "info": {
+    "singularName": "socialaccount",
+    "pluralName": "socialaccounts",
+    "displayName": "Socialaccount",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "platform": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "userid": {
+      "type": "integer"
+    }
+  }
+}
