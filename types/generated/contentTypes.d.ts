@@ -707,18 +707,15 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'plugin::users-permissions.role'
     >;
     mobile: Attribute.Integer;
-    companyname: Attribute.String;
+    name: Attribute.String;
     gst: Attribute.String;
-    influencerrequests: Attribute.Relation<
-      'plugin::users-permissions.user',
-      'oneToMany',
-      'api::influencerrequest.influencerrequest'
-    >;
     brandrequests: Attribute.Relation<
       'plugin::users-permissions.user',
       'oneToMany',
       'api::brandrequest.brandrequest'
     >;
+    platform: Attribute.Text;
+    url: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -786,9 +783,10 @@ export interface ApiBrandrequestBrandrequest extends Schema.CollectionType {
     singularName: 'brandrequest';
     pluralName: 'brandrequests';
     displayName: 'Brandrequest';
+    description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     users_permissions_user: Attribute.Relation<
@@ -799,7 +797,6 @@ export interface ApiBrandrequestBrandrequest extends Schema.CollectionType {
     brandname: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::brandrequest.brandrequest',
       'oneToOne',
@@ -822,20 +819,16 @@ export interface ApiInfluencerrequestInfluencerrequest
     singularName: 'influencerrequest';
     pluralName: 'influencerrequests';
     displayName: 'Influencerrequest';
+    description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
-    users_permissions_user: Attribute.Relation<
-      'api::influencerrequest.influencerrequest',
-      'manyToOne',
-      'plugin::users-permissions.user'
-    >;
     influencername: Attribute.String;
+    Influencer_id: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::influencerrequest.influencerrequest',
       'oneToOne',
@@ -857,6 +850,7 @@ export interface ApiNotificationNotification extends Schema.CollectionType {
     singularName: 'notification';
     pluralName: 'notifications';
     displayName: 'Notification';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -864,6 +858,7 @@ export interface ApiNotificationNotification extends Schema.CollectionType {
   attributes: {
     title: Attribute.String;
     message: Attribute.Text;
+    userid: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -891,7 +886,7 @@ export interface ApiSocialaccountSocialaccount extends Schema.CollectionType {
     description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     platform: Attribute.String;
@@ -899,7 +894,6 @@ export interface ApiSocialaccountSocialaccount extends Schema.CollectionType {
     userid: Attribute.Integer;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::socialaccount.socialaccount',
       'oneToOne',
@@ -921,6 +915,7 @@ export interface ApiSponsorshipSponsorship extends Schema.CollectionType {
     singularName: 'sponsorship';
     pluralName: 'sponsorships';
     displayName: 'Sponsorship';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -931,6 +926,7 @@ export interface ApiSponsorshipSponsorship extends Schema.CollectionType {
     mobile: Attribute.String;
     influencerid: Attribute.String;
     brandid: Attribute.String;
+    status: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

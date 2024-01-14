@@ -68,23 +68,23 @@
     "mobile": {
       "type": "integer"
     },
-    "companyname": {
+    "name": {
       "type": "string"
     },
     "gst": {
       "type": "string"
-    },
-    "influencerrequests": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::influencerrequest.influencerrequest",
-      "mappedBy": "users_permissions_user"
     },
     "brandrequests": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::brandrequest.brandrequest",
       "mappedBy": "users_permissions_user"
+    },
+    "platform": {
+      "type": "text"
+    },
+    "url": {
+      "type": "text"
     }
   }
 }

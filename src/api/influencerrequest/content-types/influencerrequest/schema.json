@@ -4,20 +4,18 @@
   "info": {
     "singularName": "influencerrequest",
     "pluralName": "influencerrequests",
-    "displayName": "Influencerrequest"
+    "displayName": "Influencerrequest",
+    "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
-    "users_permissions_user": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "plugin::users-permissions.user",
-      "inversedBy": "influencerrequests"
-    },
     "influencername": {
+      "type": "string"
+    },
+    "Influencer_id": {
       "type": "string"
     }
   }
