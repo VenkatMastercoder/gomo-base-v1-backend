@@ -83,18 +83,33 @@
     "platform": {
       "type": "text"
     },
-    "url": {
-      "type": "text"
-    },
-    "social_media": {
-      "type": "blocks"
-    },
     "collaboration_request": {
       "type": "boolean",
       "required": false,
       "default": false
     },
     "type": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "tag": {
+      "type": "string"
+    },
+    "profile_url": {
+      "type": "string"
+    },
+    "instagram_url": {
+      "type": "string"
+    },
+    "twitter_url": {
+      "type": "string"
+    },
+    "linkedin_url": {
+      "type": "string"
+    },
+    "youtube_url": {
       "type": "string"
     }
   }

@@ -759,10 +759,15 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'api::brandrequest.brandrequest'
     >;
     platform: Attribute.Text;
-    url: Attribute.Text;
-    social_media: Attribute.Blocks;
     collaboration_request: Attribute.Boolean & Attribute.DefaultTo<false>;
     type: Attribute.String;
+    description: Attribute.Text;
+    tag: Attribute.String;
+    profile_url: Attribute.String;
+    instagram_url: Attribute.String;
+    twitter_url: Attribute.String;
+    linkedin_url: Attribute.String;
+    youtube_url: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -880,6 +885,42 @@ export interface ApiNotificationNotification extends Schema.CollectionType {
   };
 }
 
+export interface ApiPromotionBrandPromotionBrand extends Schema.CollectionType {
+  collectionName: 'promotion_brands';
+  info: {
+    singularName: 'promotion-brand';
+    pluralName: 'promotion-brands';
+    displayName: 'promotion_brand';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    image_url: Attribute.String;
+    heading: Attribute.String;
+    subheading: Attribute.String;
+    btn_text_1: Attribute.String;
+    btn_text_2: Attribute.String;
+    clicks: Attribute.Integer;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::promotion-brand.promotion-brand',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::promotion-brand.promotion-brand',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiSocialaccountSocialaccount extends Schema.CollectionType {
   collectionName: 'socialaccounts';
   info: {
@@ -969,6 +1010,7 @@ declare module '@strapi/types' {
       'api::brandrequest.brandrequest': ApiBrandrequestBrandrequest;
       'api::influencerrequest.influencerrequest': ApiInfluencerrequestInfluencerrequest;
       'api::notification.notification': ApiNotificationNotification;
+      'api::promotion-brand.promotion-brand': ApiPromotionBrandPromotionBrand;
       'api::socialaccount.socialaccount': ApiSocialaccountSocialaccount;
       'api::sponsorship.sponsorship': ApiSponsorshipSponsorship;
     }
