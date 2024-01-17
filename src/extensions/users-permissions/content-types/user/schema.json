@@ -85,6 +85,17 @@
     },
     "url": {
       "type": "text"
+    },
+    "social_media": {
+      "type": "blocks"
+    },
+    "collaboration_request": {
+      "type": "boolean",
+      "required": false,
+      "default": false
+    },
+    "type": {
+      "type": "string"
     }
   }
 }
