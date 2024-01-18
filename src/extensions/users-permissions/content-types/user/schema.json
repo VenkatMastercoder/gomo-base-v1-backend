@@ -74,12 +74,6 @@
     "gst": {
       "type": "string"
     },
-    "brandrequests": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::brandrequest.brandrequest",
-      "mappedBy": "users_permissions_user"
-    },
     "platform": {
       "type": "text"
     },

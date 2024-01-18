@@ -753,11 +753,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
     mobile: Attribute.Integer;
     name: Attribute.String;
     gst: Attribute.String;
-    brandrequests: Attribute.Relation<
-      'plugin::users-permissions.user',
-      'oneToMany',
-      'api::brandrequest.brandrequest'
-    >;
     platform: Attribute.Text;
     collaboration_request: Attribute.Boolean & Attribute.DefaultTo<false>;
     type: Attribute.String;
@@ -797,12 +792,8 @@ export interface ApiBrandrequestBrandrequest extends Schema.CollectionType {
     draftAndPublish: false;
   };
   attributes: {
-    users_permissions_user: Attribute.Relation<
-      'api::brandrequest.brandrequest',
-      'manyToOne',
-      'plugin::users-permissions.user'
-    >;
-    brandname: Attribute.String;
+    name: Attribute.String;
+    requesterid: Attribute.Integer;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -833,8 +824,8 @@ export interface ApiInfluencerrequestInfluencerrequest
     draftAndPublish: false;
   };
   attributes: {
-    influencername: Attribute.String;
-    Influencer_id: Attribute.String;
+    name: Attribute.String;
+    requesterid: Attribute.Integer;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<

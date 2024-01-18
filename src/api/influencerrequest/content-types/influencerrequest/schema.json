@@ -12,11 +12,11 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "influencername": {
+    "name": {
       "type": "string"
     },
-    "Influencer_id": {
-      "type": "string"
+    "requesterid": {
+      "type": "integer"
     }
   }
 }
