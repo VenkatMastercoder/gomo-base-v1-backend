@@ -18,16 +18,28 @@
     "email": {
       "type": "string"
     },
-    "mobile": {
+    "status": {
       "type": "string"
     },
     "influencerid": {
-      "type": "string"
+      "type": "integer"
     },
     "brandid": {
+      "type": "integer"
+    },
+    "mobile": {
+      "type": "integer"
+    },
+    "message": {
       "type": "string"
     },
-    "status": {
+    "influencername": {
+      "type": "string"
+    },
+    "influencerpic": {
+      "type": "string"
+    },
+    "brandpic": {
       "type": "string"
     }
   }

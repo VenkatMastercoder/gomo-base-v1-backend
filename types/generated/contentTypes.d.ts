@@ -967,10 +967,14 @@ export interface ApiSponsorshipSponsorship extends Schema.CollectionType {
   attributes: {
     brandname: Attribute.String;
     email: Attribute.String;
-    mobile: Attribute.String;
-    influencerid: Attribute.String;
-    brandid: Attribute.String;
     status: Attribute.String;
+    influencerid: Attribute.Integer;
+    brandid: Attribute.Integer;
+    mobile: Attribute.Integer;
+    message: Attribute.String;
+    influencername: Attribute.String;
+    influencerpic: Attribute.String;
+    brandpic: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
