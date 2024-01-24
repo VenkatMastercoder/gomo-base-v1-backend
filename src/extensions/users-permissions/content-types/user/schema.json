@@ -48,11 +48,6 @@
       "private": true,
       "searchable": false
     },
-    "confirmed": {
-      "type": "boolean",
-      "default": false,
-      "configurable": true
-    },
     "blocked": {
       "type": "boolean",
       "default": false,
@@ -64,6 +59,10 @@
       "target": "plugin::users-permissions.role",
       "inversedBy": "users",
       "configurable": false
+    },
+    "confirmed": {
+      "type": "boolean",
+      "default": false
     },
     "mobile": {
       "type": "integer"
@@ -105,6 +104,10 @@
     },
     "youtube_url": {
       "type": "string"
+    },
+    "isVerified": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

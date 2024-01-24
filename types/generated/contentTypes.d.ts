@@ -743,15 +743,13 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       }>;
     resetPasswordToken: Attribute.String & Attribute.Private;
     confirmationToken: Attribute.String & Attribute.Private;
-    confirmed: Attribute.Boolean &
-      Attribute.Configurable &
-      Attribute.DefaultTo<false>;
     blocked: Attribute.Boolean & Attribute.DefaultTo<false>;
     role: Attribute.Relation<
       'plugin::users-permissions.user',
       'manyToOne',
       'plugin::users-permissions.role'
     >;
+    confirmed: Attribute.Boolean & Attribute.DefaultTo<false>;
     mobile: Attribute.Integer;
     name: Attribute.String;
     gst: Attribute.String;
@@ -765,6 +763,7 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
     twitter_url: Attribute.String;
     linkedin_url: Attribute.String;
     youtube_url: Attribute.String;
+    isVerified: Attribute.Boolean & Attribute.DefaultTo<false>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
