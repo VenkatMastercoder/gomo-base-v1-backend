@@ -51,7 +51,7 @@
     "confirmed": {
       "type": "boolean",
       "default": false,
-      "configurable": false
+      "configurable": true
     },
     "blocked": {
       "type": "boolean",
